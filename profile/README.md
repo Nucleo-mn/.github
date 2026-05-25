@@ -22,6 +22,20 @@ Filtro de discovery: [`topic:wolfops`](https://github.com/orgs/nucleo-mn/reposit
 
 ---
 
+## Engenharia / Padrões
+
+### dev-rules — Regras canônicas da Núcleo MN
+
+Source of truth única pras regras de engenharia e operação de IA assistant em todos os projetos da org. Mudanças nas regras entram via PR no próprio repo.
+
+| Repo | Descrição |
+|------|-----------|
+| [`dev-rules`](https://github.com/nucleo-mn/dev-rules) | `CONTRIBUTING.md` (engenharia) + `CLAUDE.md` (instruções de IA) + templates pra projetos novos |
+
+Cada projeto da org consome via cópia de templates + `CONTRIBUTING.md` local curto apontando pro canônico.
+
+---
+
 ## Stack padrão
 
 | Camada | Tecnologia |
@@ -37,6 +51,8 @@ Filtro de discovery: [`topic:wolfops`](https://github.com/orgs/nucleo-mn/reposit
 ---
 
 ## Convenções
+
+> Resumo. Fonte canônica completa em [`nucleo-mn/dev-rules/CONTRIBUTING.md`](https://github.com/nucleo-mn/dev-rules/blob/main/CONTRIBUTING.md).
 
 - **Branching**: GitHub Flow (`main` deployável, branches `feat/`, `fix/`, `docs/`, `chore/`)
 - **Commits**: Conventional Commits
