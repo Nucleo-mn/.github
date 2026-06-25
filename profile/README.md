@@ -57,12 +57,19 @@ Cada projeto da org consome via cópia de templates + `CONTRIBUTING.md` local cu
 | Camada | Tecnologia |
 |--------|------------|
 | Backend | Python 3.11 + FastAPI + supabase-py |
-| Frontend | Next.js 16 + Tailwind + shadcn/ui |
-| Database | Supabase (PostgreSQL) + DuckDB analítico |
-| Automação | Playwright + N8N |
+| Frontend | Next.js 16 (App Router) + Tailwind + shadcn/ui + Recharts |
+| Banco — estado/auth | Supabase (PostgreSQL) + Supabase Auth (JWT) |
+| Banco — analítico/dados | DuckDB + Polars · ClickHouse (serving de alto volume) · Parquet (data lake) |
+| Orquestração de dados | Dagster (pipelines mensais) |
+| Automação / scraping | Playwright |
 | IA | Claude API (Anthropic) — Sonnet 4.6 padrão |
+| Borda / proxy | Caddy (TLS automático, WebSocket) |
+| Segredos | SOPS + age |
+| CI/CD | GitHub Actions |
 | Ambiente | Docker + Docker Compose (dev e prod) |
 | Deploy | VPS Linux via Docker |
+
+> **Produtos de dados** (ex.: Sindicatos Digitais) usam a camada analítica (ClickHouse · DuckDB/Polars · Dagster · Parquet). **Plataformas de automação** (ex.: WolfOps) usam subprocess gerenciado + fila Postgres (`FOR UPDATE SKIP LOCKED`).
 
 ---
 
