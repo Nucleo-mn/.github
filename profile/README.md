@@ -22,6 +22,22 @@ Filtro de discovery: [`topic:wolfops`](https://github.com/orgs/nucleo-mn/reposit
 
 ---
 
+### Sindicatos Digitais — Plataforma de dados multi-tenant
+
+Substitui o ciclo manual (Power BI + planilhas feitas à mão) de ~50 sindicatos: cada um vê dashboards interativos do seu recorte e baixa os 9 arquivos BSF/mês, alimentados por automação mensal sobre dados públicos (RFB + CAGED/RAIS). Cada competência mensal é tratada como um **release de dados** (staging → data quality gate → publicação atômica). Também define a metodologia de engenharia da empresa via GitHub Projects.
+
+| Repo | Descrição |
+|------|-----------|
+| [`sindicatos-digitais`](https://github.com/nucleo-mn/sindicatos-digitais) | Monorepo do produto — Data Platform (ingestão + fábrica) + Query Engine (ClickHouse + API) + Client Platform (Next.js) |
+
+O cockpit de operação virá como fork enxuto do WolfOps (control plane), em repo à parte.
+
+Stack-chave: ClickHouse (serving) · DuckDB/Polars + Dagster (fábrica) · Parquet (lake) · Supabase (estado/auth) · Next.js (front).
+
+Filtro de discovery: [`topic:sindicatos-digitais`](https://github.com/orgs/nucleo-mn/repositories?q=topic%3Asindicatos-digitais)
+
+---
+
 ## Engenharia / Padrões
 
 ### dev-rules — Regras canônicas da Núcleo MN
